@@ -33,4 +33,5 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="miatoll_global-user 12 SKQ1.211019.001 V13.0.2.0.SJWMIXM release-keys"
 
-BUILD_FINGERPRINT := Redmi/miatoll_global/miatoll:12/RKQ1.211019.001/V13.0.2.0.SJWMIXM:user/release-keys
+# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop 
+BUILD_FINGERPRINT := "google/tokay_beta/tokay:15/BP11.241025.006/12620009:user/release-keys"
