@@ -67,6 +67,11 @@ PRODUCT_PACKAGES += \
     GCamGOPrebuilt-V2
     vendor.qti.hardware.camera.device@1.0.vendor
 
+# Remove unwanted packages
+PRODUCT_PACKAGES += \
+    removepackages
+
+
 PRODUCT_PACKAGES += \
     libMegviiFacepp-0.5.2 \
     libmegface \
