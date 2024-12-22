@@ -30,3 +30,53 @@ vendor.mm.enable.qcom_parser=16777215
 # WFD
 persist.debug.wfd.enable=1
 vendor.sys.video.disable.ubwc=1
+
+# Blur
+PRODUCT_PRODUCT_PROPERTIES += \
+persist.sys.sf.disable_blurs=1
+
+# Optimisations
+vendor.display.use_smooth_motion=1 \
+
+# DHA Tunning
+PRODUCT_VENDOR_PROPERTIES += \
+ro.config.dha_tunnable=1
+
+# Smoothens UI
+PRODUCT_VENDOR_PROPERTIES += \
+persist.service.lgospd.enable=0 \
+persist.service.pcsync.enable=0
+
+# Better Ram
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.fha_enable=true \
+    ro.sys.fw.bg_apps_limit=32 \
+    ro.config.dha_cached_max=16 \
+    ro.config.dha_empty_max=42 \
+    ro.config.dha_empty_init=32 \
+    ro.config.dha_lmk_scale=0.545 \
+    ro.config.dha_th_rate=2.3 \
+    ro.config.sdha_apps_bg_max=64 \
+    ro.config.sdha_apps_bg_min=8
+
+# Perf
+PRODUCT_VENDOR_PROPERTIES += \
+ro.vendor.extension_library=libqti-perfd-client.so
+ro.vendor.perf.scroll_opt=true \
+ro.sys.fw.dex2oat_thread_count=8 \
+debug.sf.latch_unsignaled=0 \
+
+# ART/Dex2oat
+PRODUCT_VENDOR_PROPERTIES += \
+dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
+dalvik.vm.boot-dex2oat-threads=8 \
+dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
+dalvik.vm.dex2oat-filter=quicken \
+dalvik.vm.dex2oat-filter=speed-profile \
+dalvik.vm.dex2oat-threads=8 \
+dalvik.vm.dex2oat64.enabled=true \
+dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
+dalvik.vm.image-dex2oat-filter=quicken \
+dalvik.vm.image-dex2oat-filter=speed-profile \
+dalvik.vm.image-dex2oat-threads=8 \
+dalvik.vm.systemuicompilerfilter=speed
